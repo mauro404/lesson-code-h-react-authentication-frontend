@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-const API_URL = "http://localhost:5005";
+// const API_URL = "http://localhost:5005";
 
 
 function AddTask(props) {
@@ -23,7 +23,7 @@ function AddTask(props) {
     // Send the token through the request "Authorization" Headers   
     axios
       .post(
-        `${API_URL}/api/tasks`,
+        `${process.env.REACT_APP_API_URL}/api/tasks`,
         requestBody,
         { headers: { Authorization: `Bearer ${storedToken}` } }        
       )
